@@ -27,9 +27,9 @@ Ensuite vous devez choisir une BAUD à 9600 et non 57600 comme écrit dans la do
 Choisissez votre firmware et lancer la mis à jour. Ceci peut durer pendant plusieurs minutes il ne faut pas s'inquieter.
 
 
-### Envoie des Paquet
+## Envoie des Paquets
 
-## Pré-Requis : Minicom
+### Pré-Requis : Minicom
 
 Pour gerer votre port serial, il vous faut un logiciel de gestion de port serie, personellement j'utilise minicom qui est bien personalisable.
 
@@ -43,7 +43,7 @@ Quand l'installation est terminé lancé :
  $ minicom -s
 ```
 
-## Utiliser Minicom
+### Utiliser Minicom
 
 Pour pouvoir dialoguer avec votre RN2483, vous devez configurer le port serie : donc allons dans l'onglet "Configuration du port serie"
 Nous avons donc une fenetre comme ceci :
@@ -69,7 +69,7 @@ Il faut activer "Local echo" avec la touche E qui permet de voir ce que nous ecr
 Il faut aussi activer  "Add carriage return" avec la touche U
 et activer "Ajouter LF" avec la touche A 
 
-## Envoie des paquets avec minicom
+### Envoie des paquets avec minicom
 
 Dans ce tutoriel, il est supposé que vous avez deja ajouter ce device dans le serveur Lora ou d'autre plateforme. (si ce n'est pas le cas je vous invite a regarder le tuto suivant : https://github.com/CampusIoT/tutorial/blob/master/loraserver/README-app.md)
 
