@@ -27,7 +27,7 @@ Choisissez votre firmware et lancer la mis à jour. Ceci peut durer pendant plus
 
 ### Envoie des Paquet
 
-### Pré-Requis : Minicom
+## Pré-Requis : Minicom
 
 Pour gerer votre port serial, il vous faut un logiciel de gestion de port serie, personellement j'utilise minicom qui est bien personalisable.
 
@@ -48,27 +48,61 @@ Nous avons donc une fenetre comme ceci :
 
 Mettre photo de minicom
 
-![alt text](https://github.com/Saxito/MAJRN2483/Docs/minicom_config_serie.png)
+![alt text](https://github.com/Saxito/MAJRN2483/blob/master/Docs/minicom_config_serie.png)
 
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Nous allons donc regarder quel port serie est notre carte en utilisant :
 
 ```
-Give an example
+ $ dmesg
+```
+Par exemple pour moi c'est USB0 donc dans port serie il faut noter : /dev/ttyUSB0
+
+Dans Débit/Parité/bits il faut mettre 57600 8N1
+
+Contrôle du flux matériel :Non
+Contrôle du flux logiciel : Non
+
+Ensuite il faut sortir de minicom. Nous nous retrouvons sur un ecran noir. 
+
+Nous allons donc acceder aux réglage avec CTRL+A - Z
+Il faut activer "Local echo" avec la touche E qui permet de voir ce que nous ecrivons.
+Il faut aussi activer  "Add carriage return" avec la touche U
+et activer "Ajouter LF" avec la touche A 
+
+## Envoie des paquets avec minicom
+
+Dans ce tutoriel, il est supposé que vous avez deja ajouter ce device dans le serveur Lora ou d'autre plateforme. (si ce n'est pas le cas je vous invite a regarder le tuto suivant : https://github.com/CampusIoT/tutorial/blob/master/loraserver/README-app.md)
+
+Il faut donc joindre le serveur IOT :
+
+```
+ $ mac join otaa
+```
+Appuyer ensuite sur la touche Entrée puis CTRL+J pour envoyer la commande. Normalement nous devons recevoir
+
+```
+ $ ok
+ 
+ accepted
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+Si ce n'est pas le cas essayer la commande suivante et recommencer.
 
 ```
-Give an example
+ $ mac set dr 0
 ```
 
-## Deployment
+Ensuite pour envoyer un paquet il faut executer :
 
-Add additional notes about how to deploy this on a live system
-
-## Built With
+```
+ $ mac tx cnf/uncnf 1 "votre message en hexa"
+```
+Par exemple si je veux envoyer un paquet confirmer sur le port 2 et envoyer 123A 
+```
+ $ mac tx cnf 2 123A
+```
+et nous recevons :
+```
+ $ ok
+ mac_tx_ok 
+```
