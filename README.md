@@ -5,37 +5,51 @@ Nous expliquerons aussi comment envoyer des paquets sur le serveur CampusIOT ave
 
 ## MAJ
 
-Premierement vous devez installer le logiciel
+Premierement vous devez installer le logiciel Lora "Development Suite" suivant votre OS :
 
-### Prerequisites
+https://www.microchip.com/wwwproducts/en/RN2483
 
-What things you need to install the software and how to install them
+Dans l'onglet Document/Software
+
+### Installation 
+
+Sur le même site vous devez aussi telecharger le firmware de votre choix (1.03, 1.04, 1.05)
+Ensuite lancer Lora Development Suite :
+
+Si votre device contient deja un firmware et que vous voulez mettre a jour, le logiciel doit le detecter automatiquement.
+Si votre device n'as aucun firmwre vous devez cocher la case : Bootloader Mode.
+
+Vous devez voir ceci quand vous allez dans l'onglet ???DFU???
+
+Ensuite vous devez choisir une BAUD de 9600 et non 57600 comme écrit dans la documentation. 8 bits /1 bits stop et pas de bits de parité.
+Choisissez votre firmware et lancer la mis à jour. Ceci peut durer pendant plusieurs minutes il ne faut pas s'inquieter.
+
+
+### Envoie des Paquet
+
+### Pré-Requis : Minicom
+
+Pour gerer votre port serial, il vous faut un logiciel de gestion de port serie, personellement j'utilise minicom qui est bien personalisable.
 
 ```
-Give examples
+ $ sudo apt-get install minicom
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Quand l'installation est terminé lancé :
 
 ```
-Give the example
+ $ minicom -s
 ```
 
-And repeat
+## Utiliser Minicom
 
-```
-until finished
-```
+Pour pouvoir dialoguer avec votre RN2483, vous devez configurer le port serie : donc allons dans l'onglet "Configuration du port serie"
+Nous avons donc une fenetre comme ceci :
 
-End with an example of getting some data out of the system or using it for a little demo
+Mettre photo de minicom
 
-## Running the tests
+![alt text](https://github.com/Saxito/MAJRN2483/Docs/minicom_config_serie.png)
 
-Explain how to run the automated tests for this system
 
 ### Break down into end to end tests
 
