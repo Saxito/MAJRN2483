@@ -19,9 +19,11 @@ Ensuite lancer Lora Development Suite :
 Si votre device contient deja un firmware et que vous voulez mettre a jour, le logiciel doit le detecter automatiquement.
 Si votre device n'as aucun firmwre vous devez cocher la case : Bootloader Mode.
 
-Vous devez voir ceci quand vous allez dans l'onglet ???DFU???
+Vous devez voir ceci quand vous allez dans l'onglet DFU
 
-Ensuite vous devez choisir une BAUD de 9600 et non 57600 comme écrit dans la documentation. 8 bits /1 bits stop et pas de bits de parité.
+![alt text](https://github.com/Saxito/MAJRN2483/blob/master/Docs/lorasuite.png)
+
+Ensuite vous devez choisir une BAUD à 9600 et non 57600 comme écrit dans la documentation. 8 bits de debis / 1 bits stop et pas de bits de parité.
 Choisissez votre firmware et lancer la mis à jour. Ceci peut durer pendant plusieurs minutes il ne faut pas s'inquieter.
 
 
@@ -45,8 +47,6 @@ Quand l'installation est terminé lancé :
 
 Pour pouvoir dialoguer avec votre RN2483, vous devez configurer le port serie : donc allons dans l'onglet "Configuration du port serie"
 Nous avons donc une fenetre comme ceci :
-
-Mettre photo de minicom
 
 ![alt text](https://github.com/Saxito/MAJRN2483/blob/master/Docs/minicom_config_serie.png)
 
